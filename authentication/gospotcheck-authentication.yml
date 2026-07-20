@@ -1,0 +1,15 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/gospotcheck-external-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: oauth2Bearer
+  type: http
+  scheme: bearer
+  description: 'OAuth2 access token supplied as `Authorization: Bearer <token>`. Tokens are
+    issued by GoSpotCheck; contact your Customer Success Manager or support@gospotcheck.com
+    to obtain one.'
+  sources:
+  - openapi/gospotcheck-external-openapi.yml
