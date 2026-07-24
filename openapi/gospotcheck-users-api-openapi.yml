@@ -1,0 +1,247 @@
+openapi: 3.0.3
+info:
+  title: GoSpotCheck External AsyncJobs Users API
+  version: '1.0'
+  x-generated: '2026-07-19'
+  x-method: searched
+  x-source: https://gsc.docs.apiary.io/
+  description: The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.
+  contact:
+    name: GoSpotCheck Support
+    email: support@gospotcheck.com
+    url: https://support.gospotcheck.com
+servers:
+- url: https://api.gospotcheck.com
+  description: Production
+security:
+- oauth2Bearer: []
+tags:
+- name: Users
+paths:
+  /external/v1/users:
+    get:
+      operationId: listUsers
+      summary: List users and user info
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/perPage'
+      - $ref: '#/components/parameters/include'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+    post:
+      operationId: createUsers
+      summary: Create one or multiple users
+      tags:
+      - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/User'
+              - type: array
+                items:
+                  $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /external/v1/users/me:
+    get:
+      operationId: getCurrentUser
+      summary: Get the current authenticated user
+      tags:
+      - Users
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+  /external/v1/users/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      operationId: getUser
+      summary: Get a single user
+      tags:
+      - Users
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      operationId: updateUser
+      summary: Update an existing user
+      tags:
+      - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /external/v1/users/{id}/permissions:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: GSC user id or "me".
+      schema:
+        type: string
+    get:
+      operationId: getUserPermissions
+      summary: View a user's manager permissions
+      description: Only GoSpotCheck admins or company_admin users may view permissions.
+      tags:
+      - Users
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    put:
+      operationId: updateUserPermissions
+      summary: Update a user's manager permissions
+      tags:
+      - Users
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+components:
+  responses:
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Forbidden:
+      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+  parameters:
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
+  schemas:
+    Envelope:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestHash'
+        paging:
+          $ref: '#/components/schemas/PagingHash'
+        data: {}
+        errors:
+          $ref: '#/components/schemas/ErrorsHash'
+    PagingHash:
+      type: object
+      properties:
+        current_page:
+          type: integer
+        previous_page:
+          type: integer
+          nullable: true
+        next_page:
+          type: integer
+          nullable: true
+        per_page:
+          type: integer
+        total_records:
+          type: integer
+        first_timestamp:
+          type: string
+        last_timestamp:
+          type: string
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        phone:
+          type: string
+        company_membership_role:
+          type: string
+          description: company_admin | company_manager | company_user
+        team_id:
+          type: integer
+          nullable: true
+        disabled:
+          type: string
+          nullable: true
+        created_at:
+          type: string
+        updated_at:
+          type: string
+  securitySchemes:
+    oauth2Bearer:
+      type: http
+      scheme: bearer
+      description: 'OAuth2 access token supplied as `Authorization: Bearer <token>`. Tokens are issued by GoSpotCheck; contact your Customer Success Manager or support@gospotcheck.com to obtain one.'

@@ -1,0 +1,130 @@
+openapi: 3.0.3
+info:
+  title: GoSpotCheck External AsyncJobs Tasks API
+  version: '1.0'
+  x-generated: '2026-07-19'
+  x-method: searched
+  x-source: https://gsc.docs.apiary.io/
+  description: The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.
+  contact:
+    name: GoSpotCheck Support
+    email: support@gospotcheck.com
+    url: https://support.gospotcheck.com
+servers:
+- url: https://api.gospotcheck.com
+  description: Production
+security:
+- oauth2Bearer: []
+tags:
+- name: Tasks
+paths:
+  /external/v1/missions/{mission_id}/tasks:
+    parameters:
+    - name: mission_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      operationId: listMissionTasks
+      summary: Get tasks for a given mission
+      tags:
+      - Tasks
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+    post:
+      operationId: createMissionTasks
+      summary: Create tasks and subtasks (sections) for a mission
+      tags:
+      - Tasks
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /external/v1/missions/{mission_id}/tasks/{id}:
+    parameters:
+    - name: mission_id
+      in: path
+      required: true
+      schema:
+        type: integer
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    put:
+      operationId: updateMissionTask
+      summary: Update an existing task
+      tags:
+      - Tasks
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+components:
+  responses:
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+  schemas:
+    Envelope:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestHash'
+        paging:
+          $ref: '#/components/schemas/PagingHash'
+        data: {}
+        errors:
+          $ref: '#/components/schemas/ErrorsHash'
+    PagingHash:
+      type: object
+      properties:
+        current_page:
+          type: integer
+        previous_page:
+          type: integer
+          nullable: true
+        next_page:
+          type: integer
+          nullable: true
+        per_page:
+          type: integer
+        total_records:
+          type: integer
+        first_timestamp:
+          type: string
+        last_timestamp:
+          type: string
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
+  securitySchemes:
+    oauth2Bearer:
+      type: http
+      scheme: bearer
+      description: 'OAuth2 access token supplied as `Authorization: Bearer <token>`. Tokens are issued by GoSpotCheck; contact your Customer Success Manager or support@gospotcheck.com to obtain one.'
