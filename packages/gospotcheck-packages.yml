@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: searched
+source: https://rubygems.org/gems/gospotcheck
+note: >-
+  No first-party GoSpotCheck client SDK was found on npm, PyPI, RubyGems,
+  Maven Central, NuGet, pkg.go.dev, Packagist, or crates.io. The only published
+  client library is a community-built Ruby wrapper (not vendor-maintained).
+packages:
+  - language: ruby
+    registry: rubygems
+    name: gospotcheck
+    url: https://rubygems.org/gems/gospotcheck
+    install: gem install gospotcheck
+    repo: https://github.com/bscharm/gospotcheck
+    official: false
+    note: Community Ruby wrapper for the GoSpotCheck API (~9k downloads); not maintained by GoSpotCheck.

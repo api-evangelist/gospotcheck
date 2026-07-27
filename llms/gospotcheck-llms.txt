@@ -1,0 +1,28 @@
+# GoSpotCheck (by FORM) External API
+
+> GoSpotCheck by FORM is a mobile field-execution and retail-execution platform. Its External API lets you sync people, places, place groups, teams, catalogs, and catalog items, and pull mission (survey/task) response data out of GoSpotCheck to build custom reports and integrations. REST over HTTPS, OAuth2 bearer auth, a standard response envelope (request/paging/data/errors), page-number pagination, field-operator filtering, and asynchronous CSV export for large datasets.
+
+## APIs
+- [GoSpotCheck External API docs](https://gsc.docs.apiary.io/): Full published API Blueprint on Apiary
+- [Base URL](https://api.gospotcheck.com): Production host (HTTPS, TLS 1.1+)
+
+## Specs
+- [OpenAPI (transcribed)](openapi/gospotcheck-external-openapi.yml): OpenAPI 3.0 transcription of the External API
+- [API Blueprint (verbatim)](blueprint/gospotcheck-external.apib): Provider's published Apiary blueprint
+
+## Artifacts
+- [Authentication](authentication/gospotcheck-authentication.yml): OAuth2 bearer token profile
+- [Conventions](conventions/gospotcheck-conventions.yml): Pagination, filtering, includes/methods, metadata, async export
+- [Errors](errors/gospotcheck-problem-types.yml): Response envelope error semantics
+- [Rate limits](rate-limits/gospotcheck-rate-limits.yml): 10 req/s serial, 100,000 req/day
+- [Lifecycle](lifecycle/gospotcheck-lifecycle.yml): Versioning (v1/v2), status page, deprecation history
+- [Data model](data-model/gospotcheck-data-model.yml): Places, missions, responses, catalogs entity graph
+- [MCP (candidate)](mcp/gospotcheck-mcp.yml): Candidate MCP tool surface derived from operations
+- [Agentic access](agentic-access/gospotcheck-agentic-access.yml): Recommended x-agentic-access contracts
+
+## Docs
+- [Developer / API reference](https://gsc.docs.apiary.io/)
+- [Support / Help Center](https://support.gospotcheck.com)
+- [Status page](https://status.gospotcheck.com/)
+- [Integrations](https://www.gospotcheck.com/product/integrations)
+- [Security disclosure program](https://www.gospotcheck.com/about/disclosure-program)

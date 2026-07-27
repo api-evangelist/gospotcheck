@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/gospotcheck-external-openapi.yml
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: OAuth2 bearer token in Authorization header (http bearer scheme).
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect discovery (/.well-known/openid-configuration returned 404).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom response envelope (errors hash), not application/problem+json.
+  - id: rfc9116-security-txt
+    conforms: true
+    evidence: Published /.well-known/security.txt on api.gospotcheck.com.
+  - id: pagination
+    conforms: true
+    evidence: Page-number pagination with page/per_page params and a paging hash.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key mechanism documented.
+  - id: rest
+    conforms: true
+    evidence: RESTful resource CRUD over HTTPS with standard HTTP methods.
+  - id: fhir
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: json-api
+    conforms: false

@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+host: https://api.gospotcheck.com
+documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: gospotcheck-security.txt
+    note: RFC 9116; canonical https://admin.gospotcheck.com/.well-known/security.txt; disclosure handled via Bugcrowd
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+other_hosts:
+  - host: https://www.gospotcheck.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404

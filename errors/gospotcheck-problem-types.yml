@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/gospotcheck-external-openapi.yml
+format: custom-envelope
+envelope:
+  note: >-
+    Errors are returned in the standard response envelope. The `errors` hash is
+    populated only when `request.status_code` is in the 400 or 500 range;
+    `request.status_message` carries a human-readable message.
+  fields: [request.status_code, request.status_message, errors]
+problems:
+  - status: 200
+    title: OK
+    description: Successful request.
+  - status: 201
+    title: Created
+    description: Resource (or async job) created successfully.
+  - status: 400
+    title: Bad Request
+    description: Malformed request or invalid field format; details in the errors hash.
+  - status: 401
+    title: Unauthorized
+    description: Missing or invalid OAuth2 bearer token.
+  - status: 403
+    title: Forbidden
+    description: >-
+      Access denied, or rate limit exceeded. Rate-limit violations return
+      "403 Forbidden (Rate Limit Exceeded)".
+  - status: 404
+    title: Not Found
+    description: Requested resource does not exist.
+  - status: 422
+    title: Unprocessable Entity
+    description: Model validation failed; validation messages returned in the errors hash.
+  - status: 500
+    title: Internal Server Error
+    description: Server-side error; details (when available) in the errors hash.

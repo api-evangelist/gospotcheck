@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://gsc.docs.apiary.io/
+versioning:
+  scheme: uri-path
+  current: v1
+  also_available: v2
+  note: >-
+    v1 (/external/v1/) is the primary CRUD surface; v2 (/external/v2/) adds
+    company-scoped places, place groups, image-rec tag edits, and mission jobs.
+  docs: https://gsc.docs.apiary.io/
+deprecation:
+  policy_url: https://gsc.docs.apiary.io/
+  sunset_header: false
+  history:
+    - what: Legacy TLS 1.0 endpoint (api-legacy.gospotcheck.com)
+      deprecated_on: '2018-08-01'
+      note: HTTPS with TLS 1.1+ required on api.gospotcheck.com.
+  note: >-
+    A dated deprecation event (legacy TLS endpoint) is documented; no formal
+    RFC 8594 Sunset/Deprecation header policy is published.
+sla:
+  url: https://status.gospotcheck.com/uptime
+  uptime_target: null
+status_page: https://status.gospotcheck.com/
+status_page_provider: Atlassian Statuspage
+status_feeds:
+  rss: https://status.gospotcheck.com/history.rss
+  atom: https://status.gospotcheck.com/history.atom
+monitored_components:
+  - Web Application
+  - Mobile Client Applications (iOS and Android)
+  - SSO
+  - Insights
+  - PhotoWorks
+  - Image Recognition
+  - GoSpotCheck API
+  - SFTP
+deprecated_operations: []

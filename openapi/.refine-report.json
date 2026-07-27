@@ -1,0 +1,38 @@
+{
+  "provider": "gospotcheck",
+  "sources": [
+    "gospotcheck-asyncjobs-api-openapi.yml",
+    "gospotcheck-catalogitems-api-openapi.yml",
+    "gospotcheck-catalogs-api-openapi.yml",
+    "gospotcheck-customviews-api-openapi.yml",
+    "gospotcheck-missionresponses-api-openapi.yml",
+    "gospotcheck-missions-api-openapi.yml",
+    "gospotcheck-placegroups-api-openapi.yml",
+    "gospotcheck-places-api-openapi.yml",
+    "gospotcheck-taskresponses-api-openapi.yml",
+    "gospotcheck-tasks-api-openapi.yml",
+    "gospotcheck-teams-api-openapi.yml",
+    "gospotcheck-userplaceassignments-api-openapi.yml",
+    "gospotcheck-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "gospotcheck-asyncjobs-api-openapi.yml",
+    "gospotcheck-catalogitems-api-openapi.yml",
+    "gospotcheck-catalogs-api-openapi.yml",
+    "gospotcheck-customviews-api-openapi.yml",
+    "gospotcheck-missionresponses-api-openapi.yml",
+    "gospotcheck-missions-api-openapi.yml",
+    "gospotcheck-placegroups-api-openapi.yml",
+    "gospotcheck-places-api-openapi.yml",
+    "gospotcheck-taskresponses-api-openapi.yml",
+    "gospotcheck-tasks-api-openapi.yml",
+    "gospotcheck-teams-api-openapi.yml",
+    "gospotcheck-userplaceassignments-api-openapi.yml",
+    "gospotcheck-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

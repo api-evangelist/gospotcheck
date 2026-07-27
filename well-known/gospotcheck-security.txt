@@ -1,0 +1,8 @@
+# We appreciate the efforts of independent security researchers
+# to identify security defects as well as any mitigation techniques.
+# Disclosure reporting, triage, and management is handled through Bugcrowd
+
+Contact: https://www.gospotcheck.com/about/disclosure-program
+Policy: https://www.gospotcheck.com/about/disclosure-program
+Preferred-Languages: en
+Canonical: https://admin.gospotcheck.com/.well-known/security.txt

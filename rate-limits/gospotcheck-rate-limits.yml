@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: https://gsc.docs.apiary.io/
+scope: provider-wide
+enforcement: >-
+  Exceeding a limit returns HTTP 403 Forbidden (Rate Limit Exceeded). Higher
+  limits available on request via a GoSpotCheck Customer Success Manager.
+rate_limits:
+  - name: interval
+    limit_count: 10
+    window: 1s
+    unit: requests
+    notes: Requests must be serial; concurrent requests are not accepted.
+  - name: daily
+    limit_count: 100000
+    window: 1d
+    unit: requests
+  - name: request-timeout
+    limit_count: 30
+    window: per-request
+    unit: seconds
+    notes: Individual requests time out after 30 seconds.
+signaling:
+  header: null
+  note: No rate-limit response headers are documented; over-limit surfaces as 403.

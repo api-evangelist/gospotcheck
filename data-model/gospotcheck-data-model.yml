@@ -1,0 +1,113 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/gospotcheck-external-openapi.yml
+note: >-
+  Entity graph derived from the External API resources and their id-reference
+  fields. GoSpotCheck models field-execution data: users complete missions
+  (surveys/tasks) at places, producing mission and task responses.
+entities:
+  - name: Place
+    id: id
+    endpoint: /external/v1/places
+    key_fields: [name, address, city, state, postal_code, country, custom_place_id, status]
+  - name: PlaceGroup
+    id: id
+    endpoint: /external/v1/place_groups
+    key_fields: [name, parent_id]
+  - name: User
+    id: id
+    endpoint: /external/v1/users
+    key_fields: [email, first_name, last_name, company_membership_role, team_id]
+  - name: Team
+    id: id
+    endpoint: /external/v1/teams
+    key_fields: [name, parent_id]
+  - name: Mission
+    id: id
+    endpoint: /external/v1/missions
+    key_fields: [name, state, version_identifier, version_number]
+  - name: Task
+    id: id
+    endpoint: /external/v1/missions/{mission_id}/tasks
+    key_fields: [mission_id, title, kind]
+  - name: MissionResponse
+    id: id
+    endpoint: /external/v1/mission_responses
+    key_fields: [mission_id, place_id, user_id]
+  - name: TaskResponse
+    id: id
+    endpoint: /external/v1/task_responses
+    key_fields: [task_id, mission_response_id]
+  - name: UserPlaceAssignment
+    id: id
+    endpoint: /external/v1/user_place_assignments
+    key_fields: [user_id, place_id]
+  - name: Catalog
+    id: id
+    endpoint: /external/v1/catalogs
+    key_fields: [name]
+  - name: CatalogItem
+    id: id
+    endpoint: /external/v1/catalogs/{catalog_id}/items
+    key_fields: [catalog_id, name]
+  - name: CustomView
+    id: id
+    endpoint: /external/v1/custom_views
+    key_fields: []
+relationships:
+  - from: PlaceGroup
+    to: Place
+    type: has_many
+    via: place_group membership
+  - from: PlaceGroup
+    to: PlaceGroup
+    type: belongs_to
+    via: parent_id
+  - from: Team
+    to: User
+    type: has_many
+    via: team_id
+  - from: Team
+    to: Team
+    type: belongs_to
+    via: parent_id
+  - from: User
+    to: Place
+    type: has_many
+    via: UserPlaceAssignment
+  - from: UserPlaceAssignment
+    to: User
+    type: belongs_to
+    via: user_id
+  - from: UserPlaceAssignment
+    to: Place
+    type: belongs_to
+    via: place_id
+  - from: Mission
+    to: Task
+    type: has_many
+    via: mission_id
+  - from: Mission
+    to: MissionResponse
+    type: has_many
+    via: mission_id
+  - from: MissionResponse
+    to: Place
+    type: belongs_to
+    via: place_id
+  - from: MissionResponse
+    to: User
+    type: belongs_to
+    via: user_id
+  - from: MissionResponse
+    to: TaskResponse
+    type: has_many
+    via: mission_response_id
+  - from: TaskResponse
+    to: Task
+    type: belongs_to
+    via: task_id
+  - from: Catalog
+    to: CatalogItem
+    type: has_many
+    via: catalog_id

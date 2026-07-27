@@ -1,0 +1,73 @@
+generated: '2026-07-19'
+method: searched
+source: https://gsc.docs.apiary.io/
+authentication:
+  style: oauth2-bearer
+  header: Authorization
+  format: "Bearer <token>"
+  ref: authentication/gospotcheck-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    The External API documents no idempotency-key header or parameter. Creates
+    accept batch arrays but there is no documented dedupe/retry-safety contract.
+pagination:
+  style: page-number
+  request_params:
+    page: Page number (default 1)
+    per_page: Records per page (default 25, max 200)
+    sort_by: Field to sort by
+    sort_direction: asc | desc
+  response_fields:
+    envelope_key: paging
+    fields:
+      - current_page
+      - previous_page
+      - next_page
+      - per_page
+      - total_records
+      - first_timestamp
+      - last_timestamp
+filtering:
+  style: field-operator-suffix
+  operators: [.eq, .in, .like, .ilike, .gt, .gte, .lt, .lte]
+  example: /external/v1/places?created_at.gt=1407391200&place_group_id.eq=7
+  note: Custom-property attributes are not filterable.
+field_expansion:
+  include:
+    param: include
+    note: Comma-separated related resources embedded in the response (e.g. include=teams,place_groups).
+  methods:
+    param: methods
+    note: Comma-separated derived/additional data (ignored in async requests).
+metadata:
+  supported_on: [users, places, catalog_items, tasks, missions]
+  not_supported_on: [catalogs]
+  note: >-
+    Custom property keys are provisioned by GoSpotCheck per company and returned
+    as lower-case attributes on each instance; set them as attributes on create/update.
+async_export:
+  params:
+    _async: "true|false (default false)"
+    _delimiter: ", | ; | | (default ,)"
+    _headers: "true|false (default true)"
+  format: CSV only
+  flow: index request -> job_guid -> poll /external/v1/async_jobs/csv_exports/{job_guid}/status -> download_url
+  expiration: Exports expire one week after creation.
+  ref: openapi/gospotcheck-external-openapi.yml#getAsyncCsvExportStatus
+versioning:
+  ref: lifecycle/gospotcheck-lifecycle.yml
+error_envelope:
+  ref: errors/gospotcheck-problem-types.yml
+  shape:
+    request: { status_code, status_message, path, method, params }
+    paging: present only on array/index results
+    data: object or array
+    errors: present only on 4xx/5xx responses
+rate_limit_signaling:
+  ref: rate-limits/gospotcheck-rate-limits.yml
+  note: Over-limit returns 403 Forbidden (Rate Limit Exceeded); no rate-limit headers documented.
+transport:
+  https_only: true
+  min_tls: "1.1"
+  request_timeout_seconds: 30

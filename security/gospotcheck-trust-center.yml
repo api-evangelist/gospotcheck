@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: searched
+probe: true
+url: https://www.gospotcheck.com/about/disclosure-program
+note: >-
+  GoSpotCheck (by FORM) runs a coordinated vulnerability disclosure program via
+  Bugcrowd (declared in the published /.well-known/security.txt). No dedicated
+  public trust center (trust.gospotcheck.com / security.gospotcheck.com did not
+  resolve) and no named certifications (SOC 2 / ISO 27001 / PCI / HIPAA /
+  FedRAMP) were found published at probe time. Do not assert certifications
+  without a published source.
+certifications: []
+security_program:
+  disclosure: Bugcrowd
+  contact: https://www.gospotcheck.com/about/disclosure-program
+  security_txt: well-known/gospotcheck-security.txt

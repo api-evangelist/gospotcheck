@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for GoSpotCheck External API
+  version: 1.0.0
+extends: openapi/gospotcheck-external-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-19'
+      x-apievangelist-source: https://gsc.docs.apiary.io/
+      x-apievangelist-artifacts:
+        authentication: authentication/gospotcheck-authentication.yml
+        conventions: conventions/gospotcheck-conventions.yml
+        errors: errors/gospotcheck-problem-types.yml
+        rate_limits: rate-limits/gospotcheck-rate-limits.yml
+        lifecycle: lifecycle/gospotcheck-lifecycle.yml
+        data_model: data-model/gospotcheck-data-model.yml
+  - target: $.info
+    update:
+      x-rate-limits:
+        interval: 10 req/s (serial)
+        daily: 100000 req/day
+        over_limit_status: 403 Forbidden (Rate Limit Exceeded)
+  - target: $.info
+    update:
+      x-status-page: https://status.gospotcheck.com/

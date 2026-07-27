@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/gospotcheck-external-openapi.yml
+skills:
+  - file: gospotcheck-sync-places.md
+    name: Sync places into GoSpotCheck
+    api: openapi/gospotcheck-external-openapi.yml
+    operations: [listPlaces, createPlaces, getPlace, updatePlace, listPlaceGroups, addPlacesToPlaceGroup]
+  - file: gospotcheck-export-mission-responses.md
+    name: Export mission and task response data
+    api: openapi/gospotcheck-external-openapi.yml
+    operations: [listMissions, listMissionResponses, listTaskResponses, getAsyncCsvExportStatus]
