@@ -260,7 +260,7 @@ common:
 - type: Authentication
   url: authentication/gospotcheck-authentication.yml
 - type: OpenAPI
-  url: openapi/gospotcheck-external-openapi.yml
+  url: openapi/_original/gospotcheck-external-openapi.yml
 - type: Overlay
   url: overlays/gospotcheck-external-overlay.yaml
 - type: Conventions
