@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs CustomViews API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CustomViews",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List custom views (read-only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/custom_views"
+          },
+          "docs": "List custom views (read-only)"
+        },
+        {
+          "info": {
+            "name": "Query a custom view (read-only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/custom_views/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Query a custom view (read-only)"
+        },
+        {
+          "info": {
+            "name": "Get metadata for a custom view",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/custom_views/:id/metadata",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get metadata for a custom view"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

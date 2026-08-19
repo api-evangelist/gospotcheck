@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs TaskResponses API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TaskResponses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List task responses (read-only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/task_responses",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of results (defaults to 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (defaults to 25, max 200)."
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated related resources to embed (e.g. teams,place_groups)."
+              },
+              {
+                "name": "_async",
+                "value": "",
+                "type": "query",
+                "description": "When true, run the index as an asynchronous CSV export job."
+              }
+            ]
+          },
+          "docs": "List task responses (read-only)"
+        },
+        {
+          "info": {
+            "name": "Get a single task response (read-only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/task_responses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single task response (read-only)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

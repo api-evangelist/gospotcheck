@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs Catalogs API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalogs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List catalogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs"
+          },
+          "docs": "List catalogs"
+        },
+        {
+          "info": {
+            "name": "Create a catalog",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a catalog"
+        },
+        {
+          "info": {
+            "name": "Get a single catalog with its items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single catalog with its items"
+        },
+        {
+          "info": {
+            "name": "Update an existing catalog",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an existing catalog"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

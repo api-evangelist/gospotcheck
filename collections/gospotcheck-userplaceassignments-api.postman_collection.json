@@ -1,0 +1,492 @@
+{
+  "item": [
+    {
+      "id": "7edcdec9-5e3a-4a51-8d55-11f91e7265f9",
+      "name": "UserPlaceAssignments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fbd6a3cd-ac53-4cf2-9446-a556f53a8868",
+          "name": "List user-place assignments",
+          "request": {
+            "name": "List user-place assignments",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "user_place_assignments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f105021-a63f-4947-8b46-e57bcff17545",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "user_place_assignments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 9318,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 4501,\n    \"previous_page\": 3913,\n    \"next_page\": 8488,\n    \"per_page\": 6733,\n    \"total_records\": 1906,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca54ac5c-afc5-4953-a33e-05d29e076ab7",
+          "name": "Create user-place assignments",
+          "request": {
+            "name": "Create user-place assignments",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "user_place_assignments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7345a52-ffc0-48e6-b86d-8bd9a8269cef",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "user_place_assignments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 9318,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 4501,\n    \"previous_page\": 3913,\n    \"next_page\": 8488,\n    \"per_page\": 6733,\n    \"total_records\": 1906,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "994915e3-bb22-4efd-b825-aabea5dbfc99",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "user_place_assignments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 9318,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 4501,\n    \"previous_page\": 3913,\n    \"next_page\": 8488,\n    \"per_page\": 6733,\n    \"total_records\": 1906,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc637118-5442-469f-aa8b-904f685942b0",
+          "name": "Get a single user-place assignment",
+          "request": {
+            "name": "Get a single user-place assignment",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "user_place_assignments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "617e9f67-608a-493c-8a9f-ae1a7a24c5f6",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "user_place_assignments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 9318,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 4501,\n    \"previous_page\": 3913,\n    \"next_page\": 8488,\n    \"per_page\": 6733,\n    \"total_records\": 1906,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f092789-eda5-490c-ab87-5a94c0793e95",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "user_place_assignments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 9318,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 4501,\n    \"previous_page\": 3913,\n    \"next_page\": 8488,\n    \"per_page\": 6733,\n    \"total_records\": 1906,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69c2cd40-3dbf-464e-8e16-eeb8d9aa3f3b",
+          "name": "Delete a user-place assignment",
+          "request": {
+            "name": "Delete a user-place assignment",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "user_place_assignments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0ff5f44-44a6-4c50-941b-231af3114af8",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "user_place_assignments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 9318,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 4501,\n    \"previous_page\": 3913,\n    \"next_page\": 8488,\n    \"per_page\": 6733,\n    \"total_records\": 1906,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.gospotcheck.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "12e3b6af-425a-4cee-b2bf-b1fb5cc9e151",
+    "name": "GoSpotCheck External AsyncJobs UserPlaceAssignments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.\n\nContact Support:\n Name: GoSpotCheck Support\n Email: support@gospotcheck.com",
+      "type": "text/plain"
+    }
+  }
+}

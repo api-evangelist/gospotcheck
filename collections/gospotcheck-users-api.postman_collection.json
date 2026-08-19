@@ -1,0 +1,1028 @@
+{
+  "item": [
+    {
+      "id": "8a7a1ff6-2f44-446a-8b59-f6f889106d8e",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7de2cbe-bd8d-49c0-9a83-16348c82ba7d",
+          "name": "List users and user info",
+          "request": {
+            "name": "List users and user info",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number of results (defaults to 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "25",
+                  "description": "Records per page (defaults to 25, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>",
+                  "description": "Comma-separated related resources to embed (e.g. teams,place_groups)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6dd1f9d-decf-4bf7-a843-618576d22dbd",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "25"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac6b19eb-9954-452e-8e43-d7706050334e",
+          "name": "Create one or multiple users",
+          "request": {
+            "name": "Create one or multiple users",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"company_membership_role\": \"<string>\",\n  \"team_id\": \"<integer>\",\n  \"disabled\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c1e29c3-8be6-4afd-bfe0-9353c833548d",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"company_membership_role\": \"<string>\",\n  \"team_id\": \"<integer>\",\n  \"disabled\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e58fb6f-05fe-40e3-9259-0ff616864b91",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"company_membership_role\": \"<string>\",\n  \"team_id\": \"<integer>\",\n  \"disabled\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3d54672-8abb-4d17-9ed3-b2a31a2128bf",
+          "name": "Get the current authenticated user",
+          "request": {
+            "name": "Get the current authenticated user",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users",
+                "me"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1114f5ee-c8e9-4701-a256-59dd14486a2a",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    "me"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbdd2f5c-6cc5-4de4-a63c-21963a23869b",
+          "name": "Get a single user",
+          "request": {
+            "name": "Get a single user",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8784d0d-40c8-4a7d-ad9b-276af6c29216",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85fa0794-d7e3-4b8e-bddd-bc709524e126",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa7ee309-3098-41ee-91a0-0d8a493fb517",
+          "name": "Update an existing user",
+          "request": {
+            "name": "Update an existing user",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"company_membership_role\": \"<string>\",\n  \"team_id\": \"<integer>\",\n  \"disabled\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff1927be-4d58-43c8-ac59-26ddc649f0a3",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"company_membership_role\": \"<string>\",\n  \"team_id\": \"<integer>\",\n  \"disabled\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1cfe415f-98e5-45d1-87ee-1d605b56c3a5",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"company_membership_role\": \"<string>\",\n  \"team_id\": \"<integer>\",\n  \"disabled\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3885a321-b42a-4d2c-8924-ec72ec7e4a7f",
+          "name": "View a user's manager permissions",
+          "request": {
+            "name": "View a user's manager permissions",
+            "description": {
+              "content": "Only GoSpotCheck admins or company_admin users may view permissions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users",
+                ":id",
+                "permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) GSC user id or \"me\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d62a8942-7570-4ed4-8328-bc0dd46dbd57",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) GSC user id or \"me\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44999e09-78f4-4564-8765-33b24a310e9b",
+              "name": "Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) GSC user id or \"me\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e029bcd-788e-494a-b970-3f6152763ffb",
+          "name": "Update a user's manager permissions",
+          "request": {
+            "name": "Update a user's manager permissions",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "users",
+                ":id",
+                "permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) GSC user id or \"me\"."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9ba3bd3-1b59-458e-a5fd-076109f76390",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) GSC user id or \"me\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7217e37-f1e8-4415-b335-c5cce97aba48",
+              "name": "Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "users",
+                    ":id",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) GSC user id or \"me\"."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 980,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7933,\n    \"previous_page\": 2759,\n    \"next_page\": 6679,\n    \"per_page\": 3855,\n    \"total_records\": 6879,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.gospotcheck.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4e72190a-3149-4145-8685-b43446cc5395",
+    "name": "GoSpotCheck External AsyncJobs Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.\n\nContact Support:\n Name: GoSpotCheck Support\n Email: support@gospotcheck.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs PlaceGroups API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PlaceGroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all place groups for the company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of results (defaults to 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (defaults to 25, max 200)."
+              }
+            ]
+          },
+          "docs": "List all place groups for the company"
+        },
+        {
+          "info": {
+            "name": "Create a new place group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new place group"
+        },
+        {
+          "info": {
+            "name": "Get a single place group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single place group"
+        },
+        {
+          "info": {
+            "name": "Update an existing place group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an existing place group"
+        },
+        {
+          "info": {
+            "name": "Delete an existing place group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an existing place group"
+        },
+        {
+          "info": {
+            "name": "Add places to a place group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups/:id/add_places",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "place_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add places to a place group"
+        },
+        {
+          "info": {
+            "name": "Remove places from a place group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/place_groups/:id/remove_places",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "place_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Remove places from a place group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

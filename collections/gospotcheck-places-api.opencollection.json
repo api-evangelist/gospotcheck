@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs Places API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Places",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all places for the company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/places",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of results (defaults to 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (defaults to 25, max 200)."
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query",
+                "description": "Field to sort the index by."
+              },
+              {
+                "name": "sort_direction",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated related resources to embed (e.g. teams,place_groups)."
+              },
+              {
+                "name": "_async",
+                "value": "",
+                "type": "query",
+                "description": "When true, run the index as an asynchronous CSV export job."
+              }
+            ]
+          },
+          "docs": "List all places for the company"
+        },
+        {
+          "info": {
+            "name": "Create one place or multiple places",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/places",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create one place or multiple places"
+        },
+        {
+          "info": {
+            "name": "Get a single place",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/places/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single place"
+        },
+        {
+          "info": {
+            "name": "Update an existing place",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/places/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing place"
+        },
+        {
+          "info": {
+            "name": "Disable an existing place",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.gospotcheck.com/external/v1/places/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Disable an existing place"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

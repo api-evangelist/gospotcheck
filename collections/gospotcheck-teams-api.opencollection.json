@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs Teams API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all teams for the company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/teams"
+          },
+          "docs": "List all teams for the company"
+        },
+        {
+          "info": {
+            "name": "Create a new team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/teams",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new team"
+        },
+        {
+          "info": {
+            "name": "Get a single team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single team"
+        },
+        {
+          "info": {
+            "name": "Update an existing team",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an existing team"
+        },
+        {
+          "info": {
+            "name": "Delete an existing team",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.gospotcheck.com/external/v1/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an existing team"
+        },
+        {
+          "info": {
+            "name": "Add users to a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/teams/:id/add_users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add users to a team"
+        },
+        {
+          "info": {
+            "name": "Remove users from a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/teams/:id/remove_users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Remove users from a team"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

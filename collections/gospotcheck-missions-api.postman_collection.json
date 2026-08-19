@@ -1,0 +1,607 @@
+{
+  "item": [
+    {
+      "id": "4c151592-217a-45aa-b434-3e3e3e6c34d0",
+      "name": "Missions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bfa28b29-7f1d-43b7-9830-55e0b812752f",
+          "name": "List missions and mission info",
+          "request": {
+            "name": "List missions and mission info",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "missions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number of results (defaults to 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "25",
+                  "description": "Records per page (defaults to 25, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>",
+                  "description": "Comma-separated related resources to embed (e.g. teams,place_groups)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4fde0953-b7d4-4da6-a915-00301489f5e3",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "25"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33b887c2-6500-44d4-91f7-ea2cd7b15997",
+          "name": "Create a mission",
+          "request": {
+            "name": "Create a mission",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "missions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"maximum_responses_per_user\": \"<integer>\",\n  \"maximum_responses_per_location\": \"<integer>\",\n  \"state\": \"<string>\",\n  \"enable_user_assigned_places\": \"<boolean>\",\n  \"version_identifier\": \"<integer>\",\n  \"version_number\": \"<integer>\",\n  \"started_at\": \"<string>\",\n  \"stopped_at\": \"<string>\",\n  \"completed_at\": \"<string>\",\n  \"archived_at\": \"<string>\",\n  \"created_by_id\": \"<integer>\",\n  \"updated_by_id\": \"<integer>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e2e47d2-a8b6-4ad8-83d3-e9d6c83fc912",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"maximum_responses_per_user\": \"<integer>\",\n  \"maximum_responses_per_location\": \"<integer>\",\n  \"state\": \"<string>\",\n  \"enable_user_assigned_places\": \"<boolean>\",\n  \"version_identifier\": \"<integer>\",\n  \"version_number\": \"<integer>\",\n  \"started_at\": \"<string>\",\n  \"stopped_at\": \"<string>\",\n  \"completed_at\": \"<string>\",\n  \"archived_at\": \"<string>\",\n  \"created_by_id\": \"<integer>\",\n  \"updated_by_id\": \"<integer>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "addadc04-ce6a-4f5f-b12a-37f23afc7ec4",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"maximum_responses_per_user\": \"<integer>\",\n  \"maximum_responses_per_location\": \"<integer>\",\n  \"state\": \"<string>\",\n  \"enable_user_assigned_places\": \"<boolean>\",\n  \"version_identifier\": \"<integer>\",\n  \"version_number\": \"<integer>\",\n  \"started_at\": \"<string>\",\n  \"stopped_at\": \"<string>\",\n  \"completed_at\": \"<string>\",\n  \"archived_at\": \"<string>\",\n  \"created_by_id\": \"<integer>\",\n  \"updated_by_id\": \"<integer>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28972d78-5534-48e8-abc4-43ef22c2c0a7",
+          "name": "Get a single mission",
+          "request": {
+            "name": "Get a single mission",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "missions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f4cd522-0e6e-48d3-8be6-e83b76051937",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a868633d-a3d7-4836-8b65-0941466827c7",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "123df847-425a-4e25-894f-aa4c19922e60",
+          "name": "Update an existing mission",
+          "request": {
+            "name": "Update an existing mission",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "missions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1eb21a7c-e230-4a2d-bf67-0cb539624bc2",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c45bf86a-f0a9-41c4-9365-92523ed2a206",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "missions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3326,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 1863,\n    \"previous_page\": 856,\n    \"next_page\": 5954,\n    \"per_page\": 5925,\n    \"total_records\": 2645,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.gospotcheck.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "22fface5-4889-450d-961b-7b23e019394a",
+    "name": "GoSpotCheck External AsyncJobs Missions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.\n\nContact Support:\n Name: GoSpotCheck Support\n Email: support@gospotcheck.com",
+      "type": "text/plain"
+    }
+  }
+}

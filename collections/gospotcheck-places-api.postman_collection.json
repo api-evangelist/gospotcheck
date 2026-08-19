@@ -1,0 +1,956 @@
+{
+  "item": [
+    {
+      "id": "0a0ce561-184d-4d09-b0f9-493935b20456",
+      "name": "Places",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4412072b-f31f-479b-9d6b-03c62375f19b",
+          "name": "List all places for the company",
+          "request": {
+            "name": "List all places for the company",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "places"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number of results (defaults to 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "25",
+                  "description": "Records per page (defaults to 25, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>",
+                  "description": "Field to sort the index by."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_direction",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>",
+                  "description": "Comma-separated related resources to embed (e.g. teams,place_groups)."
+                },
+                {
+                  "disabled": false,
+                  "key": "_async",
+                  "value": "false",
+                  "description": "When true, run the index as an asynchronous CSV export job."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc5583cb-f227-4b17-8f63-25459e83e2a1",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_async",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7382b82f-0291-41d3-b4fa-6097ae9bce29",
+              "name": "Missing or invalid OAuth2 bearer token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_async",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c9616ae-3534-48a7-ad67-e7917e60b89d",
+              "name": "Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "_async",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe98dfbf-09a5-4fb9-a671-abcf1e54dae1",
+          "name": "Create one place or multiple places",
+          "request": {
+            "name": "Create one place or multiple places",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "places"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"country\": \"<string>\",\n  \"custom_place_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"disabled_at\": \"<string>\",\n  \"geocoding_disabled\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dfa0954f-ba4d-4f4b-bfa3-c86623010eac",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"country\": \"<string>\",\n  \"custom_place_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"disabled_at\": \"<string>\",\n  \"geocoding_disabled\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df1c854b-b927-461d-a334-a362cd65637b",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"country\": \"<string>\",\n  \"custom_place_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"disabled_at\": \"<string>\",\n  \"geocoding_disabled\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8616ff1-48da-4150-a116-fd7840ece1fb",
+          "name": "Get a single place",
+          "request": {
+            "name": "Get a single place",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "places",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c596d96-95b5-4234-b8ac-61e1996174e1",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b584ae79-0266-43b7-9df3-f508e903b2f5",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "faccfae0-fd95-4e2a-9ef4-6aa74a3a6d4d",
+          "name": "Update an existing place",
+          "request": {
+            "name": "Update an existing place",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "places",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"country\": \"<string>\",\n  \"custom_place_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"disabled_at\": \"<string>\",\n  \"geocoding_disabled\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4ca8c65-f1bb-494d-b0c4-a36ce4f24233",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"country\": \"<string>\",\n  \"custom_place_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"disabled_at\": \"<string>\",\n  \"geocoding_disabled\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca436372-a5c9-4aef-bfac-02eb7378920a",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"country\": \"<string>\",\n  \"custom_place_id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"disabled_at\": \"<string>\",\n  \"geocoding_disabled\": \"<boolean>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9124871b-c592-4afd-b102-b5f132ce73d7",
+          "name": "Disable an existing place",
+          "request": {
+            "name": "Disable an existing place",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "places",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8cc4f2e-a20f-4995-9eb7-4ecf0bbee9e1",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "890ca1fd-f6f8-4e09-8d0f-e3ecd6953fbb",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "places",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 5816,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 3004,\n    \"previous_page\": 1479,\n    \"next_page\": 8338,\n    \"per_page\": 6006,\n    \"total_records\": 2499,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.gospotcheck.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8f7dc6e8-d37e-412b-9ec1-48228c3ce71b",
+    "name": "GoSpotCheck External AsyncJobs Places API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.\n\nContact Support:\n Name: GoSpotCheck Support\n Email: support@gospotcheck.com",
+      "type": "text/plain"
+    }
+  }
+}

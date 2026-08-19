@@ -2,50 +2,55 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/gospotcheck-external-openapi.yml
-note: >-
-  No official hosted/remote GoSpotCheck MCP server was found. This is a
-  candidate tool surface derived one-to-one from the External API operations,
-  covering the highest-value read/write flows. Not published by GoSpotCheck.
+note: No official hosted/remote GoSpotCheck MCP server was found. This is a candidate tool surface derived
+  one-to-one from the External API operations, covering the highest-value read/write flows. Not published
+  by GoSpotCheck.
 server:
   name: gospotcheck
   transport: http
 tools:
-  - name: list_places
-    description: List places for the company
-    source_operation: openapi/gospotcheck-external-openapi.yml#listPlaces
-  - name: create_places
-    description: Create one or many places
-    source_operation: openapi/gospotcheck-external-openapi.yml#createPlaces
-  - name: get_place
-    description: Get a single place
-    source_operation: openapi/gospotcheck-external-openapi.yml#getPlace
-  - name: list_users
-    description: List users
-    source_operation: openapi/gospotcheck-external-openapi.yml#listUsers
-  - name: get_current_user
-    description: Get the authenticated user
-    source_operation: openapi/gospotcheck-external-openapi.yml#getCurrentUser
-  - name: list_missions
-    description: List missions
-    source_operation: openapi/gospotcheck-external-openapi.yml#listMissions
-  - name: get_mission
-    description: Get a single mission
-    source_operation: openapi/gospotcheck-external-openapi.yml#getMission
-  - name: list_mission_tasks
-    description: List tasks for a mission
-    source_operation: openapi/gospotcheck-external-openapi.yml#listMissionTasks
-  - name: list_mission_responses
-    description: List mission responses (read-only)
-    source_operation: openapi/gospotcheck-external-openapi.yml#listMissionResponses
-  - name: list_task_responses
-    description: List task responses (read-only)
-    source_operation: openapi/gospotcheck-external-openapi.yml#listTaskResponses
-  - name: list_catalogs
-    description: List catalogs
-    source_operation: openapi/gospotcheck-external-openapi.yml#listCatalogs
-  - name: list_catalog_items
-    description: List catalog items
-    source_operation: openapi/gospotcheck-external-openapi.yml#listCatalogItems
-  - name: get_async_csv_export_status
-    description: Check an async CSV export job status
-    source_operation: openapi/gospotcheck-external-openapi.yml#getAsyncCsvExportStatus
+- name: list_places
+  description: List places for the company
+  source_operation: openapi/gospotcheck-external-openapi.yml#listPlaces
+- name: create_places
+  description: Create one or many places
+  source_operation: openapi/gospotcheck-external-openapi.yml#createPlaces
+- name: get_place
+  description: Get a single place
+  source_operation: openapi/gospotcheck-external-openapi.yml#getPlace
+- name: list_users
+  description: List users
+  source_operation: openapi/gospotcheck-external-openapi.yml#listUsers
+- name: get_current_user
+  description: Get the authenticated user
+  source_operation: openapi/gospotcheck-external-openapi.yml#getCurrentUser
+- name: list_missions
+  description: List missions
+  source_operation: openapi/gospotcheck-external-openapi.yml#listMissions
+- name: get_mission
+  description: Get a single mission
+  source_operation: openapi/gospotcheck-external-openapi.yml#getMission
+- name: list_mission_tasks
+  description: List tasks for a mission
+  source_operation: openapi/gospotcheck-external-openapi.yml#listMissionTasks
+- name: list_mission_responses
+  description: List mission responses (read-only)
+  source_operation: openapi/gospotcheck-external-openapi.yml#listMissionResponses
+- name: list_task_responses
+  description: List task responses (read-only)
+  source_operation: openapi/gospotcheck-external-openapi.yml#listTaskResponses
+- name: list_catalogs
+  description: List catalogs
+  source_operation: openapi/gospotcheck-external-openapi.yml#listCatalogs
+- name: list_catalog_items
+  description: List catalog items
+  source_operation: openapi/gospotcheck-external-openapi.yml#listCatalogItems
+- name: get_async_csv_export_status
+  description: Check an async CSV export job status
+  source_operation: openapi/gospotcheck-external-openapi.yml#getAsyncCsvExportStatus
+deployment:
+  mode: none
+  verified: derived
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census

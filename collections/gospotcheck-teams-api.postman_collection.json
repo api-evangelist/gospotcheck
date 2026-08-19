@@ -1,0 +1,838 @@
+{
+  "item": [
+    {
+      "id": "82c46b5c-7a36-43f8-95f9-71602e302d20",
+      "name": "Teams",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "31e2e6ae-197c-4b0f-843e-31d201d333e9",
+          "name": "List all teams for the company",
+          "request": {
+            "name": "List all teams for the company",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5245bb83-011b-4dfc-9d5a-7a23f11a8334",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afef59ad-6a66-4916-b4c7-f35b49df71f9",
+          "name": "Create a new team",
+          "request": {
+            "name": "Create a new team",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"parent_id\": \"<integer>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95ae516f-d573-4642-9a85-33e8d1f9f744",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"parent_id\": \"<integer>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b264022-8123-4c2c-8e33-352565ae28df",
+              "name": "Unprocessable entity (model validation failed).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"parent_id\": \"<integer>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9deb9b0a-4e2c-4376-b943-6dc057d2bcea",
+          "name": "Get a single team",
+          "request": {
+            "name": "Get a single team",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82d48b03-b72d-4ae7-8e4e-0a3e56aee07e",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c5e0275-9979-4ee7-85f0-79c2bb08ecf2",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ed0ca96-e4ad-401b-a57f-f7a3555901c7",
+          "name": "Update an existing team",
+          "request": {
+            "name": "Update an existing team",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10b4db06-e357-44a1-beca-3e5c72b95b47",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc30a4fa-3374-47a4-8fe5-2b9f5359e0a7",
+          "name": "Delete an existing team",
+          "request": {
+            "name": "Delete an existing team",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88de6948-eb79-438f-b016-4919738206b5",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ccd1454e-a607-44ee-b931-325be5a194a1",
+          "name": "Add users to a team",
+          "request": {
+            "name": "Add users to a team",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams",
+                ":id",
+                "add_users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user_ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68a16f7c-00e7-4f02-ac61-229b5a9e8a03",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams",
+                    ":id",
+                    "add_users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "706f604f-1494-4e6b-9a1f-dd03591101fd",
+          "name": "Remove users from a team",
+          "request": {
+            "name": "Remove users from a team",
+            "description": {},
+            "url": {
+              "path": [
+                "external",
+                "v1",
+                "teams",
+                ":id",
+                "remove_users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user_ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91a804da-c08e-479d-a103-f68ff3be114e",
+              "name": "Standard success envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "external",
+                    "v1",
+                    "teams",
+                    ":id",
+                    "remove_users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"request\": {\n    \"status_code\": 3949,\n    \"status_message\": \"string\",\n    \"path\": \"string\",\n    \"method\": \"string\",\n    \"params\": {}\n  },\n  \"paging\": {\n    \"current_page\": 7311,\n    \"previous_page\": 1667,\n    \"next_page\": 3966,\n    \"per_page\": 1791,\n    \"total_records\": 7747,\n    \"first_timestamp\": \"string\",\n    \"last_timestamp\": \"string\"\n  },\n  \"data\": \"\",\n  \"errors\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.gospotcheck.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5a36a762-4833-464e-bb4b-b0a9d0e5f218",
+    "name": "GoSpotCheck External AsyncJobs Teams API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.\n\nContact Support:\n Name: GoSpotCheck Support\n Email: support@gospotcheck.com",
+      "type": "text/plain"
+    }
+  }
+}

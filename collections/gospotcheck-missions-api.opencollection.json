@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs Missions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Missions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List missions and mission info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/missions",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of results (defaults to 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Records per page (defaults to 25, max 200)."
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated related resources to embed (e.g. teams,place_groups)."
+              }
+            ]
+          },
+          "docs": "List missions and mission info"
+        },
+        {
+          "info": {
+            "name": "Create a mission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/missions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a mission"
+        },
+        {
+          "info": {
+            "name": "Get a single mission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/missions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single mission"
+        },
+        {
+          "info": {
+            "name": "Update an existing mission",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/missions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an existing mission"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

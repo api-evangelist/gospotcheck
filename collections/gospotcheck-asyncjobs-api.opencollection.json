@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AsyncJobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check the status of an asynchronous CSV export job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/async_jobs/csv_exports/:job_guid/status",
+            "params": [
+              {
+                "name": "job_guid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Check the status of an asynchronous CSV export job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs CatalogItems API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CatalogItems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List catalog items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs/:catalog_id/items",
+            "params": [
+              {
+                "name": "catalog_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List catalog items"
+        },
+        {
+          "info": {
+            "name": "Create catalog items",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs/:catalog_id/items",
+            "params": [
+              {
+                "name": "catalog_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create catalog items"
+        },
+        {
+          "info": {
+            "name": "Update a catalog item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs/:catalog_id/items/:id",
+            "params": [
+              {
+                "name": "catalog_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a catalog item"
+        },
+        {
+          "info": {
+            "name": "Delete a catalog item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.gospotcheck.com/external/v1/catalogs/:catalog_id/items/:id",
+            "params": [
+              {
+                "name": "catalog_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a catalog item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

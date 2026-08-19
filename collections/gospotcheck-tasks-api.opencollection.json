@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs Tasks API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get tasks for a given mission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/missions/:mission_id/tasks",
+            "params": [
+              {
+                "name": "mission_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get tasks for a given mission"
+        },
+        {
+          "info": {
+            "name": "Create tasks and subtasks (sections) for a mission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/missions/:mission_id/tasks",
+            "params": [
+              {
+                "name": "mission_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create tasks and subtasks (sections) for a mission"
+        },
+        {
+          "info": {
+            "name": "Update an existing task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.gospotcheck.com/external/v1/missions/:mission_id/tasks/:id",
+            "params": [
+              {
+                "name": "mission_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an existing task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

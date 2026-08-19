@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GoSpotCheck External AsyncJobs UserPlaceAssignments API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UserPlaceAssignments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user-place assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/user_place_assignments"
+          },
+          "docs": "List user-place assignments"
+        },
+        {
+          "info": {
+            "name": "Create user-place assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.gospotcheck.com/external/v1/user_place_assignments"
+          },
+          "docs": "Create user-place assignments"
+        },
+        {
+          "info": {
+            "name": "Get a single user-place assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.gospotcheck.com/external/v1/user_place_assignments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a single user-place assignment"
+        },
+        {
+          "info": {
+            "name": "Delete a user-place assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.gospotcheck.com/external/v1/user_place_assignments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a user-place assignment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
