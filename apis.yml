@@ -51,6 +51,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - Async Jobs
+  tags_raw:
   - AsyncJobs
   properties:
   - type: OpenAPI
@@ -93,6 +95,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - Custom Views
+  tags_raw:
   - CustomViews
   properties:
   - type: OpenAPI
@@ -177,6 +181,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
@@ -191,6 +197,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -219,6 +227,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
