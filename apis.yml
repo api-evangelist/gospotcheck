@@ -63,7 +63,7 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
-  - Async Jobs
+  - AsyncJobs
   tags_raw:
   - AsyncJobs
   properties:
@@ -107,7 +107,7 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
-  - Custom Views
+  - CustomViews
   tags_raw:
   - CustomViews
   properties:
