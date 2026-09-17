@@ -75,20 +75,6 @@ apis:
     url: https://gsc.docs.apiary.io/
   - type: APIReference
     url: https://gsc.docs.apiary.io/
-- aid: gospotcheck:gospotcheck-catalogitems-api
-  name: GoSpotCheck CatalogItems API
-  description: The CatalogItems API from GoSpotCheck — 2 operation(s) for catalogitems.
-  humanURL: https://gsc.docs.apiary.io/
-  baseURL: https://api.gospotcheck.com
-  tags:
-  - CatalogItems
-  properties:
-  - type: OpenAPI
-    url: openapi/gospotcheck-catalogitems-api-openapi.yml
-  - type: Documentation
-    url: https://gsc.docs.apiary.io/
-  - type: APIReference
-    url: https://gsc.docs.apiary.io/
 - aid: gospotcheck:gospotcheck-catalogs-api
   name: GoSpotCheck Catalogs API
   description: The Catalogs API from GoSpotCheck — 2 operation(s) for catalogs.
@@ -247,6 +233,20 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/gospotcheck-users-api-openapi.yml
+  - type: Documentation
+    url: https://gsc.docs.apiary.io/
+  - type: APIReference
+    url: https://gsc.docs.apiary.io/
+- aid: gospotcheck:gospotcheck-catalog-items-api
+  name: GoSpotCheck Catalog Items API
+  description: The Catalog Items API from GoSpotCheck — 2 operation(s) for catalog items.
+  humanURL: https://gsc.docs.apiary.io/
+  baseURL: https://api.gospotcheck.com
+  tags:
+  - Catalog Items
+  properties:
+  - type: OpenAPI
+    url: openapi/gospotcheck-catalog-items-api-openapi.yml
   - type: Documentation
     url: https://gsc.docs.apiary.io/
   - type: APIReference
