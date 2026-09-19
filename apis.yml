@@ -81,6 +81,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - Catalog
+  tags_raw:
   - Catalogs
   properties:
   - type: OpenAPI
@@ -243,6 +245,8 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
+  - CatalogItems
+  tags_raw:
   - Catalog Items
   properties:
   - type: OpenAPI
