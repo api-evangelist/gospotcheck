@@ -1,19 +1,7 @@
 {
   "provider": "gospotcheck",
   "sources": [
-    "gospotcheck-asyncjobs-api-openapi.yml",
-    "gospotcheck-catalogitems-api-openapi.yml",
-    "gospotcheck-catalogs-api-openapi.yml",
-    "gospotcheck-customviews-api-openapi.yml",
-    "gospotcheck-missionresponses-api-openapi.yml",
-    "gospotcheck-missions-api-openapi.yml",
-    "gospotcheck-placegroups-api-openapi.yml",
-    "gospotcheck-places-api-openapi.yml",
-    "gospotcheck-taskresponses-api-openapi.yml",
-    "gospotcheck-tasks-api-openapi.yml",
-    "gospotcheck-teams-api-openapi.yml",
-    "gospotcheck-userplaceassignments-api-openapi.yml",
-    "gospotcheck-users-api-openapi.yml"
+    "_original/gospotcheck-external-openapi.yml"
   ],
   "outputs": [
     "gospotcheck-asyncjobs-api-openapi.yml",
@@ -30,9 +18,30 @@
     "gospotcheck-userplaceassignments-api-openapi.yml",
     "gospotcheck-users-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "gospotcheck-external-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "superseded outputs removed: gospotcheck-catalog-items-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 13 total)"
+  ],
+  "skipped": [
+    "gospotcheck-asyncjobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-catalog-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-catalogs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-customviews-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-missionresponses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-missions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-placegroups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-places-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-taskresponses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-userplaceassignments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "gospotcheck-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

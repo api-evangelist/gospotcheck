@@ -1,11 +1,11 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: GoSpotCheck External AsyncJobs Missions API
+  title: GoSpotCheck External Missions API
   version: '1.0'
   x-generated: '2026-07-19'
   x-method: searched
   x-source: https://gsc.docs.apiary.io/
-  description: The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.
+  description: The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account.
   contact:
     name: GoSpotCheck Support
     email: support@gospotcheck.com
@@ -74,48 +74,23 @@ paths:
         '422':
           $ref: '#/components/responses/Unprocessable'
 components:
-  responses:
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-  parameters:
-    perPage:
-      name: per_page
-      in: query
-      description: Records per page (defaults to 25, max 200).
-      schema:
-        type: integer
-        default: 25
-        maximum: 200
-    page:
-      name: page
-      in: query
-      description: Page number of results (defaults to 1).
-      schema:
-        type: integer
-        default: 1
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
   schemas:
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
     Envelope:
       type: object
       properties:
@@ -132,11 +107,13 @@ components:
         current_page:
           type: integer
         previous_page:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         next_page:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         per_page:
           type: integer
         total_records:
@@ -145,9 +122,6 @@ components:
           type: string
         last_timestamp:
           type: string
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
     Mission:
       type: object
       properties:
@@ -158,11 +132,13 @@ components:
         instructions:
           type: string
         maximum_responses_per_user:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         maximum_responses_per_location:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         state:
           type: string
           description: draft | published | stopped | completed | archived | versioned
@@ -173,17 +149,21 @@ components:
         version_number:
           type: integer
         started_at:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         stopped_at:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         completed_at:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         archived_at:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         created_by_id:
           type: integer
         updated_by_id:
@@ -192,19 +172,47 @@ components:
           type: string
         updated_at:
           type: string
-    RequestHash:
-      type: object
-      properties:
-        status_code:
-          type: integer
-        status_message:
-          type: string
-        path:
-          type: string
-        method:
-          type: string
-        params:
-          type: object
+  parameters:
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http

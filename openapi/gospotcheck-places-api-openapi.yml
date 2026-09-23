@@ -1,11 +1,11 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: GoSpotCheck External AsyncJobs Places API
+  title: GoSpotCheck External Places API
   version: '1.0'
   x-generated: '2026-07-19'
   x-method: searched
   x-source: https://gsc.docs.apiary.io/
-  description: The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account. It supports ongoing creates/updates to people, places, place groups, teams, catalogs and items, and pulling MissionResponse / TaskResponse data out of GoSpotCheck to build custom reports. All requests are RESTful over HTTPS, authenticated with an OAuth2 bearer token in the Authorization header. Responses use a standard envelope with `request`, `paging`, `data`, and `errors` hashes. Faithfully transcribed from the provider's published Apiary API Blueprint; not every field-level schema is modeled.
+  description: The GoSpotCheck (by FORM) External API lets developers build custom applications and integrations against a GoSpotCheck company account.
   contact:
     name: GoSpotCheck Support
     email: support@gospotcheck.com
@@ -100,81 +100,23 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Unauthorized:
-      description: Missing or invalid OAuth2 bearer token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Forbidden:
-      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-  parameters:
-    sortDirection:
-      name: sort_direction
-      in: query
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-    perPage:
-      name: per_page
-      in: query
-      description: Records per page (defaults to 25, max 200).
-      schema:
-        type: integer
-        default: 25
-        maximum: 200
-    page:
-      name: page
-      in: query
-      description: Page number of results (defaults to 1).
-      schema:
-        type: integer
-        default: 1
-    sortBy:
-      name: sort_by
-      in: query
-      description: Field to sort the index by.
-      schema:
-        type: string
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
-    async:
-      name: _async
-      in: query
-      description: When true, run the index as an asynchronous CSV export job.
-      schema:
-        type: boolean
-        default: false
   schemas:
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
     Envelope:
       type: object
       properties:
@@ -191,11 +133,13 @@ components:
         current_page:
           type: integer
         previous_page:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         next_page:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
         per_page:
           type: integer
         total_records:
@@ -204,9 +148,6 @@ components:
           type: string
         last_timestamp:
           type: string
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
     Place:
       type: object
       properties:
@@ -227,34 +168,98 @@ components:
           type: string
           description: ISO3166-1 alpha-2
         custom_place_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         status:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: null when enabled; 'disabled' when disabled
         disabled_at:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         geocoding_disabled:
           type: boolean
         created_at:
           type: string
         updated_at:
           type: string
-    RequestHash:
-      type: object
-      properties:
-        status_code:
-          type: integer
-        status_message:
-          type: string
-        path:
-          type: string
-        method:
-          type: string
-        params:
-          type: object
+  parameters:
+    sortDirection:
+      name: sort_direction
+      in: query
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
+    async:
+      name: _async
+      in: query
+      description: When true, run the index as an asynchronous CSV export job.
+      schema:
+        type: boolean
+        default: false
+    sortBy:
+      name: sort_by
+      in: query
+      description: Field to sort the index by.
+      schema:
+        type: string
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
+  responses:
+    Forbidden:
+      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unauthorized:
+      description: Missing or invalid OAuth2 bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http
