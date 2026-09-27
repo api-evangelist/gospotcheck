@@ -56,6 +56,15 @@ tags:
 - Data Collection
 - Surveys
 - Merchandising
+- Consumer Packaged Goods
+- Mobile
+tags_raw:
+- Company
+- Retail Execution
+- Field Service
+- Data Collection
+- Surveys
+- Merchandising
 - CPG
 - Mobile
 apis:
@@ -245,8 +254,6 @@ apis:
   humanURL: https://gsc.docs.apiary.io/
   baseURL: https://api.gospotcheck.com
   tags:
-  - CatalogItems
-  tags_raw:
   - Catalog Items
   properties:
   - type: OpenAPI

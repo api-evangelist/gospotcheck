@@ -74,33 +74,48 @@ paths:
         '422':
           $ref: '#/components/responses/Unprocessable'
 components:
+  parameters:
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
+  responses:
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   schemas:
-    RequestHash:
-      type: object
-      properties:
-        status_code:
-          type: integer
-        status_message:
-          type: string
-        path:
-          type: string
-        method:
-          type: string
-        params:
-          type: object
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
-    Envelope:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestHash'
-        paging:
-          $ref: '#/components/schemas/PagingHash'
-        data: {}
-        errors:
-          $ref: '#/components/schemas/ErrorsHash'
     PagingHash:
       type: object
       properties:
@@ -122,6 +137,19 @@ components:
           type: string
         last_timestamp:
           type: string
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
     Mission:
       type: object
       properties:
@@ -172,47 +200,19 @@ components:
           type: string
         updated_at:
           type: string
-  parameters:
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
-    perPage:
-      name: per_page
-      in: query
-      description: Records per page (defaults to 25, max 200).
-      schema:
-        type: integer
-        default: 25
-        maximum: 200
-    page:
-      name: page
-      in: query
-      description: Page number of results (defaults to 1).
-      schema:
-        type: integer
-        default: 1
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
+    Envelope:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestHash'
+        paging:
+          $ref: '#/components/schemas/PagingHash'
+        data: {}
+        errors:
+          $ref: '#/components/schemas/ErrorsHash'
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
   securitySchemes:
     oauth2Bearer:
       type: http
