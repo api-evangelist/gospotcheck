@@ -118,42 +118,10 @@ paths:
         '200':
           $ref: '#/components/responses/Success'
 components:
-  parameters:
-    perPage:
-      name: per_page
-      in: query
-      description: Records per page (defaults to 25, max 200).
-      schema:
-        type: integer
-        default: 25
-        maximum: 200
-    page:
-      name: page
-      in: query
-      description: Page number of results (defaults to 1).
-      schema:
-        type: integer
-        default: 1
-  responses:
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
   schemas:
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
     PagingHash:
       type: object
       properties:
@@ -198,9 +166,6 @@ components:
         data: {}
         errors:
           $ref: '#/components/schemas/ErrorsHash'
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
     PlaceGroup:
       type: object
       properties:
@@ -216,6 +181,41 @@ components:
           type: string
         updated_at:
           type: string
+  responses:
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+  parameters:
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
   securitySchemes:
     oauth2Bearer:
       type: http

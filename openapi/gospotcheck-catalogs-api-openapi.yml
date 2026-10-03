@@ -68,37 +68,7 @@ paths:
         '200':
           $ref: '#/components/responses/Success'
 components:
-  responses:
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
   schemas:
-    Catalog:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        created_at:
-          type: string
-        updated_at:
-          type: string
     PagingHash:
       type: object
       properties:
@@ -119,6 +89,20 @@ components:
         first_timestamp:
           type: string
         last_timestamp:
+          type: string
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
+    Catalog:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        created_at:
+          type: string
+        updated_at:
           type: string
     RequestHash:
       type: object
@@ -143,9 +127,25 @@ components:
         data: {}
         errors:
           $ref: '#/components/schemas/ErrorsHash'
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http

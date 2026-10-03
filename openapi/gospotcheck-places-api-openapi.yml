@@ -100,80 +100,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  parameters:
-    perPage:
-      name: per_page
-      in: query
-      description: Records per page (defaults to 25, max 200).
-      schema:
-        type: integer
-        default: 25
-        maximum: 200
-    async:
-      name: _async
-      in: query
-      description: When true, run the index as an asynchronous CSV export job.
-      schema:
-        type: boolean
-        default: false
-    page:
-      name: page
-      in: query
-      description: Page number of results (defaults to 1).
-      schema:
-        type: integer
-        default: 1
-    sortDirection:
-      name: sort_direction
-      in: query
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-    sortBy:
-      name: sort_by
-      in: query
-      description: Field to sort the index by.
-      schema:
-        type: string
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
-  responses:
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Unauthorized:
-      description: Missing or invalid OAuth2 bearer token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Forbidden:
-      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
   schemas:
     PagingHash:
       type: object
@@ -196,6 +122,9 @@ components:
           type: string
         last_timestamp:
           type: string
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
     RequestHash:
       type: object
       properties:
@@ -257,9 +186,80 @@ components:
         data: {}
         errors:
           $ref: '#/components/schemas/ErrorsHash'
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
+  parameters:
+    async:
+      name: _async
+      in: query
+      description: When true, run the index as an asynchronous CSV export job.
+      schema:
+        type: boolean
+        default: false
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
+    sortBy:
+      name: sort_by
+      in: query
+      description: Field to sort the index by.
+      schema:
+        type: string
+    sortDirection:
+      name: sort_direction
+      in: query
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+  responses:
+    Forbidden:
+      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unauthorized:
+      description: Missing or invalid OAuth2 bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http

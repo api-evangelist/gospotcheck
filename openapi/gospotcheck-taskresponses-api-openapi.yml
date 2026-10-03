@@ -50,36 +50,10 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  parameters:
-    perPage:
-      name: per_page
-      in: query
-      description: Records per page (defaults to 25, max 200).
-      schema:
-        type: integer
-        default: 25
-        maximum: 200
-    page:
-      name: page
-      in: query
-      description: Page number of results (defaults to 1).
-      schema:
-        type: integer
-        default: 1
-    async:
-      name: _async
-      in: query
-      description: When true, run the index as an asynchronous CSV export job.
-      schema:
-        type: boolean
-        default: false
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
   schemas:
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
     PagingHash:
       type: object
       properties:
@@ -124,9 +98,35 @@ components:
         data: {}
         errors:
           $ref: '#/components/schemas/ErrorsHash'
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
+  parameters:
+    perPage:
+      name: per_page
+      in: query
+      description: Records per page (defaults to 25, max 200).
+      schema:
+        type: integer
+        default: 25
+        maximum: 200
+    page:
+      name: page
+      in: query
+      description: Page number of results (defaults to 1).
+      schema:
+        type: integer
+        default: 1
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
+    async:
+      name: _async
+      in: query
+      description: When true, run the index as an asynchronous CSV export job.
+      schema:
+        type: boolean
+        default: false
   responses:
     NotFound:
       description: Resource not found.

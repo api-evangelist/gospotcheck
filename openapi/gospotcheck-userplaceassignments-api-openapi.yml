@@ -63,25 +63,6 @@ paths:
         '200':
           $ref: '#/components/responses/Success'
 components:
-  responses:
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
   schemas:
     PagingHash:
       type: object
@@ -104,6 +85,9 @@ components:
           type: string
         last_timestamp:
           type: string
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
     RequestHash:
       type: object
       properties:
@@ -127,9 +111,25 @@ components:
         data: {}
         errors:
           $ref: '#/components/schemas/ErrorsHash'
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
+  responses:
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http
