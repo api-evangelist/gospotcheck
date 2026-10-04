@@ -101,43 +101,9 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   schemas:
-    PagingHash:
-      type: object
-      properties:
-        current_page:
-          type: integer
-        previous_page:
-          type:
-          - integer
-          - 'null'
-        next_page:
-          type:
-          - integer
-          - 'null'
-        per_page:
-          type: integer
-        total_records:
-          type: integer
-        first_timestamp:
-          type: string
-        last_timestamp:
-          type: string
     ErrorsHash:
       type: object
       description: Present only when status_code is in the 400 or 500 range.
-    RequestHash:
-      type: object
-      properties:
-        status_code:
-          type: integer
-        status_message:
-          type: string
-        path:
-          type: string
-        method:
-          type: string
-        params:
-          type: object
     Place:
       type: object
       properties:
@@ -186,7 +152,92 @@ components:
         data: {}
         errors:
           $ref: '#/components/schemas/ErrorsHash'
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
+    PagingHash:
+      type: object
+      properties:
+        current_page:
+          type: integer
+        previous_page:
+          type:
+          - integer
+          - 'null'
+        next_page:
+          type:
+          - integer
+          - 'null'
+        per_page:
+          type: integer
+        total_records:
+          type: integer
+        first_timestamp:
+          type: string
+        last_timestamp:
+          type: string
+  responses:
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Unauthorized:
+      description: Missing or invalid OAuth2 bearer token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Forbidden:
+      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   parameters:
+    sortDirection:
+      name: sort_direction
+      in: query
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+    sortBy:
+      name: sort_by
+      in: query
+      description: Field to sort the index by.
+      schema:
+        type: string
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
     async:
       name: _async
       in: query
@@ -209,57 +260,6 @@ components:
       schema:
         type: integer
         default: 1
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
-    sortBy:
-      name: sort_by
-      in: query
-      description: Field to sort the index by.
-      schema:
-        type: string
-    sortDirection:
-      name: sort_direction
-      in: query
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-  responses:
-    Forbidden:
-      description: Forbidden. Also returned as `403 Forbidden (Rate Limit Exceeded)` when the 10 req/s or 100,000 req/day limit is exceeded.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Unauthorized:
-      description: Missing or invalid OAuth2 bearer token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http

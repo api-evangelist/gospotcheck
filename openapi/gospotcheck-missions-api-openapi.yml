@@ -75,6 +75,32 @@ paths:
           $ref: '#/components/responses/Unprocessable'
 components:
   schemas:
+    ErrorsHash:
+      type: object
+      description: Present only when status_code is in the 400 or 500 range.
+    Envelope:
+      type: object
+      properties:
+        request:
+          $ref: '#/components/schemas/RequestHash'
+        paging:
+          $ref: '#/components/schemas/PagingHash'
+        data: {}
+        errors:
+          $ref: '#/components/schemas/ErrorsHash'
+    RequestHash:
+      type: object
+      properties:
+        status_code:
+          type: integer
+        status_message:
+          type: string
+        path:
+          type: string
+        method:
+          type: string
+        params:
+          type: object
     PagingHash:
       type: object
       properties:
@@ -96,22 +122,6 @@ components:
           type: string
         last_timestamp:
           type: string
-    ErrorsHash:
-      type: object
-      description: Present only when status_code is in the 400 or 500 range.
-    RequestHash:
-      type: object
-      properties:
-        status_code:
-          type: integer
-        status_message:
-          type: string
-        path:
-          type: string
-        method:
-          type: string
-        params:
-          type: object
     Mission:
       type: object
       properties:
@@ -162,17 +172,32 @@ components:
           type: string
         updated_at:
           type: string
-    Envelope:
-      type: object
-      properties:
-        request:
-          $ref: '#/components/schemas/RequestHash'
-        paging:
-          $ref: '#/components/schemas/PagingHash'
-        data: {}
-        errors:
-          $ref: '#/components/schemas/ErrorsHash'
+  responses:
+    Unprocessable:
+      description: Unprocessable entity (model validation failed).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
+    Success:
+      description: Standard success envelope.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Envelope'
   parameters:
+    include:
+      name: include
+      in: query
+      description: Comma-separated related resources to embed (e.g. teams,place_groups).
+      schema:
+        type: string
     perPage:
       name: per_page
       in: query
@@ -188,31 +213,6 @@ components:
       schema:
         type: integer
         default: 1
-    include:
-      name: include
-      in: query
-      description: Comma-separated related resources to embed (e.g. teams,place_groups).
-      schema:
-        type: string
-  responses:
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Success:
-      description: Standard success envelope.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
-    Unprocessable:
-      description: Unprocessable entity (model validation failed).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Envelope'
   securitySchemes:
     oauth2Bearer:
       type: http
