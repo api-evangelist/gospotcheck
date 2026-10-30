@@ -64,6 +64,153 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-GoSpotCheck is a company surfaced as a portfolio company of 500-global, point-nine, techstars and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+GoSpotCheck (by FORM) is a mobile field-execution and retail-execution platform used by field teams to collect store-level data, complete surveys and tasks ("missions") at places, and audit merchandising and compliance. Its External API lets developers sync people, places, place groups, teams, catalogs, and catalog items, and pull MissionResponse and TaskResponse data out of GoSpotCheck to build custom reports and integrations. The API is REST over HTTPS with OAuth2 bearer authentication, a standard response envelope (request/paging/data/errors), page-number pagination, field-operator filtering, related-resource includes, and asynchronous CSV export for large datasets.
 
-Backed by: 500-global, point-nine, techstars — https://gospotcheck.com
+**Areas:** Company · Retail Execution · Field Service Management · Data Collection · Surveys · Merchandising · Consumer Packaged Goods · Mobile
+
+## GoSpotCheck on APIs.io
+
+Everything profiled for GoSpotCheck is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/gospotcheck/](https://apis.io/providers/gospotcheck/)** — or go straight to one of the APIs or properties below.
+
+### APIs (13)
+
+- [GoSpotCheck AsyncJobs API](https://apis.io/apis/gospotcheck/gospotcheck-asyncjobs-api/) — The AsyncJobs API from GoSpotCheck — 1 operation(s) for asyncjobs.
+- [GoSpotCheck Catalogs API](https://apis.io/apis/gospotcheck/gospotcheck-catalogs-api/) — The Catalogs API from GoSpotCheck — 2 operation(s) for catalogs.
+- [GoSpotCheck CustomViews API](https://apis.io/apis/gospotcheck/gospotcheck-customviews-api/) — The CustomViews API from GoSpotCheck — 3 operation(s) for customviews.
+- [GoSpotCheck MissionResponses API](https://apis.io/apis/gospotcheck/gospotcheck-missionresponses-api/) — The MissionResponses API from GoSpotCheck — 2 operation(s) for missionresponses.
+- [GoSpotCheck Missions API](https://apis.io/apis/gospotcheck/gospotcheck-missions-api/) — The Missions API from GoSpotCheck — 2 operation(s) for missions.
+- [GoSpotCheck PlaceGroups API](https://apis.io/apis/gospotcheck/gospotcheck-placegroups-api/) — The PlaceGroups API from GoSpotCheck — 4 operation(s) for placegroups.
+- [GoSpotCheck Places API](https://apis.io/apis/gospotcheck/gospotcheck-places-api/) — The Places API from GoSpotCheck — 2 operation(s) for places.
+- [GoSpotCheck TaskResponses API](https://apis.io/apis/gospotcheck/gospotcheck-taskresponses-api/) — The TaskResponses API from GoSpotCheck — 2 operation(s) for taskresponses.
+- [GoSpotCheck Tasks API](https://apis.io/apis/gospotcheck/gospotcheck-tasks-api/) — The Tasks API from GoSpotCheck — 2 operation(s) for tasks.
+- [GoSpotCheck Teams API](https://apis.io/apis/gospotcheck/gospotcheck-teams-api/) — The Teams API from GoSpotCheck — 4 operation(s) for teams.
+- [GoSpotCheck UserPlaceAssignments API](https://apis.io/apis/gospotcheck/gospotcheck-userplaceassignments-api/) — The UserPlaceAssignments API from GoSpotCheck — 2 operation(s) for userplaceassignments.
+- [GoSpotCheck Users API](https://apis.io/apis/gospotcheck/gospotcheck-users-api/) — The Users API from GoSpotCheck — 4 operation(s) for users.
+- [GoSpotCheck Catalog Items API](https://apis.io/apis/gospotcheck/gospotcheck-catalog-items-api/) — The Catalog Items API from GoSpotCheck — 2 operation(s) for catalog items.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [gospotcheck](https://apis.io/servers/gospotcheck/gospotcheck/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Gospotcheck Agentic Access](https://apis.io/agentic-access/gospotcheck/gospotcheck-agentic-access/)
+
+#### Collections (13)
+
+Postman and Open Collection request collections.
+
+- [GoSpotCheck External AsyncJobs API](https://apis.io/collections/gospotcheck/open-gospotcheck-asyncjobs-api/)
+- [GoSpotCheck External AsyncJobs CatalogItems API](https://apis.io/collections/gospotcheck/open-gospotcheck-catalogitems-api/)
+- [GoSpotCheck External AsyncJobs Catalogs API](https://apis.io/collections/gospotcheck/open-gospotcheck-catalogs-api/)
+- [GoSpotCheck External AsyncJobs CustomViews API](https://apis.io/collections/gospotcheck/open-gospotcheck-customviews-api/)
+- [GoSpotCheck External AsyncJobs MissionResponses API](https://apis.io/collections/gospotcheck/open-gospotcheck-missionresponses-api/)
+- [GoSpotCheck External AsyncJobs Missions API](https://apis.io/collections/gospotcheck/open-gospotcheck-missions-api/)
+- [GoSpotCheck External AsyncJobs PlaceGroups API](https://apis.io/collections/gospotcheck/open-gospotcheck-placegroups-api/)
+- [GoSpotCheck External AsyncJobs Places API](https://apis.io/collections/gospotcheck/open-gospotcheck-places-api/)
+- [GoSpotCheck External AsyncJobs TaskResponses API](https://apis.io/collections/gospotcheck/open-gospotcheck-taskresponses-api/)
+- [GoSpotCheck External AsyncJobs Tasks API](https://apis.io/collections/gospotcheck/open-gospotcheck-tasks-api/)
+- [GoSpotCheck External AsyncJobs Teams API](https://apis.io/collections/gospotcheck/open-gospotcheck-teams-api/)
+- [GoSpotCheck External AsyncJobs UserPlaceAssignments API](https://apis.io/collections/gospotcheck/open-gospotcheck-userplaceassignments-api/)
+- [GoSpotCheck External AsyncJobs Users API](https://apis.io/collections/gospotcheck/open-gospotcheck-users-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Gospotcheck External Overlay](https://apis.io/overlays/gospotcheck/gospotcheck-external-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Gospotcheck Authentication](https://apis.io/security/gospotcheck/gospotcheck-authentication/)
+- [Gospotcheck Domain Security](https://apis.io/security/gospotcheck/gospotcheck-domain-security/)
+- [Gospotcheck Trust Center](https://apis.io/security/gospotcheck/gospotcheck-trust-center/)
+- [Gospotcheck Vulnerability Disclosure](https://apis.io/security/gospotcheck/gospotcheck-vulnerability-disclosure/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Gospotcheck Rate Limits](https://apis.io/rate-limits/gospotcheck/gospotcheck-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://gospotcheck.com)
+- [Documentation](https://gsc.docs.apiary.io/)
+- [API reference](https://gsc.docs.apiary.io/)
+- [Pricing](https://www.gospotcheck.com/pricing)
+- [Sign up](https://admin.gospotcheck.com)
+- [Support](https://support.gospotcheck.com)
+- [Blog](https://www.gospotcheck.com/blog)
+- [Security](https://www.gospotcheck.com/about/disclosure-program)
+- [Terms of service](https://www.gospotcheck.com/terms)
+- [Privacy policy](https://www.gospotcheck.com/privacy)
+- [GitHub](https://github.com/gospotcheck)
+- [Status](https://status.gospotcheck.com/)
+
+## API Evangelist rating
+
+**Kin Score 47.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 49.8 |
+| Contract governance | 4.5 |
+| Operational transparency | 57.9 |
+| Developer ergonomics | 33.9 |
+| Access clarity | 52.6 |
+
+**Agent readiness 23.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/gospotcheck/](https://apis.io/providers/gospotcheck/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for GoSpotCheck: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/gospotcheck/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
